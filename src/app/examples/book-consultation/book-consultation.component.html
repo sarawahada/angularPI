@@ -1,0 +1,79 @@
+<div class="wrapper">
+  <div class="page-header page-header-small" filter-color="blue">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg') ;">
+      </div>
+  </div>
+  <div class="section">
+      <div class="container">
+        <div class="button-container">
+            <a href="examples/profileConsultant" class="btn btn-primary btn-round btn-lg"> Consultant details</a>
+        </div>
+                  <h4 class="title text-center">Book Consultation </h4>
+  <div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+  <form #consultationForm="ngForm" (ngSubmit)="addConsultation(consultationForm)">
+    <!-- Motive input -->
+        <div class="form-group">
+          <label for="motive">Motive</label>
+          <input type="text" class="form-control" id="motive" name="motive" [(ngModel)]="newConsultation.motive_cons" required>
+        </div>
+      
+        <!-- Type input -->
+        <div class="form-group">
+          <label for="type">Type</label>
+          <input type="text" class="form-control" id="type" name="type" [(ngModel)]="newConsultation.typecons" required>
+        </div>
+        <!-- Creation Date input -->
+        <div class="form-group">
+          <label for="dp">Date</label>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="datepicker-container">
+                      <div class="form-group">
+                        <input class="form-control datetimepicker" placeholder="06/07/2023"
+                        id="dp" name="dp" [(ngModel)]="newConsultation.creationdate_cons" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" data-color="orange" required>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Add Consultation</button>
+    </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<footer class="footer footer-default">
+  <div class="container">
+      <nav>
+          <ul>
+              <li>
+                  <a href="#">
+                  Contact
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      About Us
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Blog
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      License
+                  </a>
+              </li>
+          </ul>
+      </nav>
+  </div>
+</footer>
+</div>
+
