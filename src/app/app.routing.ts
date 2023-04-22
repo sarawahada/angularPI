@@ -3,17 +3,19 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ComponentsComponent } from './components/components.component';
-import { LandingComponent } from './examples/landing/landing.component';
-import { LoginComponent } from './examples/login/login.component';
-import { ProfileComponent } from './examples/profile/profile.component';
-import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-import { ConsultationComponent } from './component/consultation/consultation.component';
-import {ProfileConsultantComponent} from './examples/profileConsultant/profileConsultant.component'
-import { BookConsultationComponent } from './examples/book-consultation/book-consultation.component';
-import { bookConsultationComponent } from './examples/profileConsultant copy/bookConsultation';
+import { ComponentsComponent } from './front/components/components.component';
+import { LandingComponent } from './front/examples/landing/landing.component';
+import { LoginComponent } from './front/examples/login/login.component';
+import { ProfileComponent } from './front/examples/profile/profile.component';
+import { NucleoiconsComponent } from './front/components/nucleoicons/nucleoicons.component';
+import { ConsultationComponent } from './front/component/consultation/consultation.component';
+import {ProfileConsultantComponent} from './front/examples/profileConsultant/profileConsultant.component'
+import { BookConsultationComponent } from './front/examples/book-consultation/book-consultation.component';
+import { bookConsultationComponent } from './front/examples/profileConsultant copy/bookConsultation';
+import { DashboardComponent } from './back/dashboard/dashboard.component';
+import { FullComponent } from './back/layouts/full/full.component';
+
 const routes: Routes =[
-    { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index',                component: ComponentsComponent },
     { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: 'examples/landing',     component: LandingComponent },
@@ -22,10 +24,24 @@ const routes: Routes =[
     { path: 'consultation',         component: ConsultationComponent},
     { path: 'examples/profileConsultant',component: ProfileConsultantComponent},
     { path: 'examples/bookConsultation',component: BookConsultationComponent},
-    { path: 'examples/book',component: bookConsultationComponent}
-
-
-
+    { path: 'examples/book',component: bookConsultationComponent},
+    { path: 'dashboard',component: DashboardComponent},
+ 
+  {
+    path: '',
+    component: FullComponent,
+    children: [
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./back/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'component',
+        loadChildren: () => import('./back/component/component.module').then((m: { ComponentsModule: any; }) => m.ComponentsModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({

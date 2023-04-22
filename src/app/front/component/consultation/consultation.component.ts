@@ -1,9 +1,9 @@
 
 import { NGB_DATEPICKER_DATE_ADAPTER_FACTORY } from '@ng-bootstrap/ng-bootstrap/datepicker/adapters/ngb-date-adapter';
 import { Component, OnInit } from '@angular/core';
-import { Consultation } from 'app/class/consultation';
-import { ConsultationService } from 'app/service/consultation.service';
-import { IAlert } from 'app/components/notification/notification.component';
+import { Consultation } from 'app/front/class/consultation';
+import { ConsultationService } from 'app/front/service/consultation.service';
+import { IAlert } from 'app/front/components/notification/notification.component';
 import { NgForm } from '@angular/forms';
 import * as Rellax from 'rellax';
 import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
