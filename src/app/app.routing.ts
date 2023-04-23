@@ -8,7 +8,7 @@ import { LandingComponent } from './front/examples/landing/landing.component';
 import { LoginComponent } from './front/examples/login/login.component';
 import { ProfileComponent } from './front/examples/profile/profile.component';
 import { NucleoiconsComponent } from './front/components/nucleoicons/nucleoicons.component';
-import { ConsultationComponent } from './front/component/consultation/consultation.component';
+import { ConsultationComponent } from './back/component/consultation/consultation.component';
 import {ProfileConsultantComponent} from './front/examples/profileConsultant/profileConsultant.component'
 import { BookConsultationComponent } from './front/examples/book-consultation/book-consultation.component';
 import { bookConsultationComponent } from './front/examples/profileConsultant copy/bookConsultation';
@@ -25,9 +25,7 @@ const routes: Routes =[
     { path: 'examples/profileConsultant',component: ProfileConsultantComponent},
     { path: 'examples/bookConsultation',component: BookConsultationComponent},
     { path: 'examples/book',component: bookConsultationComponent},
-    { path: 'dashboard',component: DashboardComponent},
- 
-  {
+      {
     path: '',
     component: FullComponent,
     children: [
@@ -50,7 +48,6 @@ const routes: Routes =[
         BrowserModule,
         RouterModule.forRoot(routes)
     ],
-    exports: [
-    ],
+    exports: [RouterModule],
 })
 export class AppRoutingModule { }

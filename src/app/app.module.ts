@@ -25,7 +25,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { NavbarComponent } from 'app/front/shared/navbar/navbar.component';
-import { ConsultationComponent } from 'app/front/component/consultation/consultation.component';
+import { ConsultationComponent } from './back/component/consultation/consultation.component';
 
 import { AppRoutingModule } from 'app/app.routing';
 import { ComponentsModule } from 'app/front/components/components.module';
@@ -46,7 +46,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavigationComponent,
     SidebarComponent,
     NavbarComponent,
-    ConsultationComponent
+    ConsultationComponent,
   ],
   imports: [
     CommonModule,
@@ -65,6 +65,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ComponentsModule,
     ExamplesModule
   ],
+  exports: [  ],
   providers: [
     {
       provide: LocationStrategy,

@@ -8,7 +8,7 @@ import { Consultation } from 'app/front/class/consultation';
 })
 export class ConsultationService {
 
-  private baseUrl = 'http://localhost:8080/consultation';
+  private baseUrl = 'http://localhost:8089/consultation';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +25,9 @@ export class ConsultationService {
   }
   addConsultation(consultation: Consultation): Observable<any> {
     return this.http.post(`${this.baseUrl}/add`, consultation);
+  }
+  cancelConsultation(id_cons: number): Observable<any> {
+    const url = `${this.baseUrl}/cancel/${id_cons}`;
+    return this.http.put(url, {});
   }
 }
