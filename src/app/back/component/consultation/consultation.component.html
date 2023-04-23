@@ -45,28 +45,28 @@
                         <div class="d-flex align-items-center">
                           <img [src]="consultation.user" alt="user" width="45" class="rounded-circle">
                           <div class="ms-3">
-                            <h5 class="mb-0 font-medium">{{consultation.user.firstname}} {{consultation.user.lastname}}</h5>
+                            <h5 class="mb-0 font-medium" style="color: black;">{{consultation.user.firstname}} {{consultation.user.lastname}}</h5>
                             <span class="text-muted">{{consultation.user.email}}</span>
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td class="fs-4" >{{consultation.id_cons}}</td>
+                    <td class="fs-4" style="color: black;" >{{consultation.id_cons}}</td>
                     <td>
-                      <h5 class="mb-0 fw-normal">{{consultation.motive_cons}}</h5>
+                      <h5 class="fs-4" style="color: black;">{{consultation.motive_cons}}</h5>
                     </td>
                     <td>
-                      <h5 class="mb-0 fw-normal">{{consultation.creationdate_cons}}</h5>
+                      <h5 class="fs-4" style="color: black;">{{consultation.creationdate_cons}}</h5>
                     </td>
                     <td>
                       <span class="p-2 bg-{{consultation.status_cons ? 'success' : 'danger'}} rounded-circle d-inline-block ms-3"></span>
                     </td>
                       <td>
-                        <h5 class="mb-0 fw-normal">{{consultation.code_cons}}</h5>
+                        <h5 class="fs-4" style="color: black;">{{consultation.code_cons}}</h5>
                     </td>
                     <td>
-                      <h5 class="mb-0 fw-normal" *ngIf="consultation.typecons=='online'">online</h5>
-                      <h5 class="mb-0 fw-normal" *ngIf="consultation.typecons=='facetoface'">face to face</h5>
+                      <h5 class="mb-0 fw-normal" style="color: black;" *ngIf="consultation.typecons=='online'">online</h5>
+                      <h5 class="mb-0 fw-normal" style="color: black;" *ngIf="consultation.typecons=='facetoface'">face to face</h5>
                   </td>
                   <td>
                     <tr>

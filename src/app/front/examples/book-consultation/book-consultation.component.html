@@ -5,25 +5,63 @@
   </div>
   <div class="section">
       <div class="container">
-        <div class="button-container">
-            <a href="examples/profileConsultant" class="btn btn-primary btn-round btn-lg"> Consultant details</a>
-        </div>
+        <div>
+            <ng-container *ngFor="let alert of alerts">
+              <ngb-alert [type]="alert.type" [dismissible]="false">
+                    <button type="button" name="button" class="close" (click)="closeAlert(alert)">
+                      <span aria-hidden="true">
+                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </span>
+                    </button>
+                    <div class="message">
+                      <ng-container *ngIf="alert.icon">
+                        <div class="alert-icon">
+                          <i class="now-ui-icons {{alert.icon}}"></i>
+                        </div>
+                      </ng-container>
+                      <strong>{{alert.strong}} </strong>{{ alert.message }}
+                    </div>
+              </ngb-alert>
+            </ng-container>
+          </div>
+        <button class="btn btn-primary btn-icon btn-round" type="button" >
+            <a href="examples/profileConsultant" style="color: white;"> <i class="now-ui-icons arrows-1_minimal-left">  </i></a>
+
+           
+        </button>
                   <h4 class="title text-center">Book Consultation </h4>
   <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-lg-8">
   <form #consultationForm="ngForm" (ngSubmit)="addConsultation(consultationForm)">
+                <!-- Type input -->
+                <div class="form-group">
+                  <label for="type">Type</label>
+                  <div class="form-check form-check-radio">
+                      <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="type" id="type"[(ngModel)]="newConsultation.typecons" value="online" required>
+                          <span class="form-check-sign"></span>
+                          Online consultation
+                      </label>
+                  </div>
+                  <div class="form-check form-check-radio">
+                      <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="type" id="type" [(ngModel)]="newConsultation.typecons" value="facetoface" checked >
+                          <span class="form-check-sign"></span>
+                          Face to face consultation
+                      </label>
+                  </div>
+                </div>
     <!-- Motive input -->
-        <div class="form-group">
-          <label for="motive">Motive</label>
-          <input type="text" class="form-control" id="motive" name="motive" [(ngModel)]="newConsultation.motive_cons" required>
-        </div>
-      
-        <!-- Type input -->
-        <div class="form-group">
-          <label for="type">Type</label>
-          <input type="text" class="form-control" id="type" name="type" [(ngModel)]="newConsultation.typecons" required>
-        </div>
+    <div class="form-group">
+        <label for="motive">Motive</label>
+        <input type="text" id="motive" name="motive" class="form-control" [(ngModel)]="newConsultation.motive_cons" required pattern="^[a-zA-Z]+(\s[a-zA-Z]+)*$">
+        <div *ngIf="consultationForm.controls.motive.touched && consultationForm.controls.motive.invalid" >
+        <div class="form-group has-danger">
+        <div class="form-control form-control-danger" >Please enter a valid motive.</div>
+      </div>
+    </div>
+    </div>
         <!-- Creation Date input -->
         <div class="form-group">
           <label for="dp">Date</label>
@@ -32,14 +70,14 @@
                   <div class="datepicker-container">
                       <div class="form-group">
                         <input class="form-control datetimepicker" placeholder="06/07/2023"
-                        id="dp" name="dp" [(ngModel)]="newConsultation.creationdate_cons" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" data-color="orange" required>
+                        id="dp" name="dp" [(ngModel)]="newConsultation.creationdate_cons" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" data-color="orange">
                       </div>
                   </div>
               </div>
           </div>
         </div>
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary">Add Consultation</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!consultationForm.valid">Submit</button>
     </form>
     </div>
   </div>

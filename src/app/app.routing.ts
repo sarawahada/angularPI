@@ -29,7 +29,7 @@ const routes: Routes =[
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: '/examples/landing', pathMatch: 'full' },
       {
         path: 'dashboard',
         loadChildren: () => import('./back/dashboard/dashboard.module').then(m => m.DashboardModule)

@@ -43,13 +43,14 @@ export class BookConsultationComponent implements OnInit {
     navbar.classList.remove('navbar-transparent');
 }
 addConsultation(form: NgForm) {
-
-  this.newConsultation.motive_cons = form.value.motive;
   this.newConsultation.typecons = form.value.type;
+  console.log(form.value.type);
+  this.newConsultation.motive_cons = form.value.motive;
+  console.log(form.value.motive);
+
 // Get the date from the form
    const date = form.value.dp;
    console.log(form.value.dp);
-
 // Format the date using the DatePipe
 console.log(form.value.dp); // output: e.g. 2023-04-16
 
@@ -65,7 +66,10 @@ this.consultationService.addConsultation(this.newConsultation).subscribe(
       message: 'Consultation added successfully.',
       icon: 'ui-2_like'
     }); 
-  },
+    setTimeout(() => {
+      window.location.href = 'examples/profileConsultant';
+    }, 3000);
+  }, 
 error => {
       console.error('Error adding consultation:', error);
       // show error message
