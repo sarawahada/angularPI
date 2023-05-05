@@ -30,6 +30,10 @@ import { ConsultationComponent } from './back/component/consultation/consultatio
 import { AppRoutingModule } from 'app/app.routing';
 import { ComponentsModule } from 'app/front/components/components.module';
 import { ExamplesModule } from 'app/front/examples/examples.module';
+import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
+import { AddTransactionComponent } from './back/component/add-transaction/add-transaction.component';
+import { environment } from 'environments/environment';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -47,6 +51,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     NavbarComponent,
     ConsultationComponent,
+    
+   
   ],
   imports: [
     CommonModule,
@@ -63,6 +69,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     RouterModule,
     AppRoutingModule,
     ComponentsModule,
+    RecaptchaV3Module,
+   NgxCaptchaModule,
     ExamplesModule
   ],
   exports: [  ],
@@ -71,6 +79,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
     },
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: environment.recaptcha.siteKey,
+  },
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

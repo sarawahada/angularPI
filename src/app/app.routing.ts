@@ -14,7 +14,11 @@ import { BookConsultationComponent } from './front/examples/book-consultation/bo
 import { bookConsultationComponent } from './front/examples/profileConsultant copy/bookConsultation';
 import { DashboardComponent } from './back/dashboard/dashboard.component';
 import { FullComponent } from './back/layouts/full/full.component';
-
+import { TransactionComponent } from './back/component/transaction/transaction.component';
+import { AddTransactionComponent } from './back/component/add-transaction/add-transaction.component';
+import { TransferComponent } from './back/component/transfer/transfer.component';
+import { FeedbackComponent } from './back/component/feedback/feedback.component';
+import { EventClientComponent } from './front/examples/event-client/event-client.component';
 const routes: Routes =[
     { path: 'index',                component: ComponentsComponent },
     { path: 'nucleoicons',          component: NucleoiconsComponent },
@@ -22,9 +26,14 @@ const routes: Routes =[
     { path: 'examples/login',       component: LoginComponent },
     { path: 'examples/profile',     component: ProfileComponent },
     { path: 'consultation',         component: ConsultationComponent},
+    { path: 'transaction',          component: TransactionComponent},
     { path: 'examples/profileConsultant',component: ProfileConsultantComponent},
     { path: 'examples/bookConsultation',component: BookConsultationComponent},
     { path: 'examples/book',component: bookConsultationComponent},
+    { path: 'addtrans ' ,component: AddTransactionComponent},
+    {path: '/transfer', component:TransferComponent},
+    {path: 'Feedback', component:FeedbackComponent},
+    {path: 'EventClientComponent', component : EventClientComponent},
       {
     path: '',
     component: FullComponent,

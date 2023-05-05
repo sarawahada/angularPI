@@ -1,0 +1,7 @@
+export enum TypeTrans {
+    DEPOSITS='DEPOSITS', 
+    TRANSFER='TRANSFER' ,
+     LOANPAYMENTS='LOANPAYMENTS',
+      WITHDRAWL='WITHDRAWL'
+}
+

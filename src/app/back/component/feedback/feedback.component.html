@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Stars</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <button (click)="getSortedFeedback()" type="button" class="btn btn- primary" >Sort</button>
+        <tr *ngFor="let feedback of feedbacks| paginate : {
+          itemsPerPage: 5,
+          currentPage: p
+        }">
+          
+          <td>{{ feedback.id_fb }}</td>
+          <td>{{ feedback.stars_fb }}</td>
+          <td>{{ feedback.comment_fb }}</td>
+          <td><button (click)="deleteFeedback(feedback.id_fb)" type="button" class="btn btn-
+            primary">DELETE</button></td>
+            <button (click)="generatePdf() " type="button" class="btn btn-
+            primary">Generate PDF</button>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls
+    (pageChange) ="p=$event"
+  ></pagination-controls>
+ 
+   
+  </div>
+</body>
+</html>

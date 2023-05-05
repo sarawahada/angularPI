@@ -12,7 +12,12 @@ import { NgbdnavBasicComponent } from './nav/nav.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
-
+import { TransactionComponent } from './transaction/transaction.component';
+import { AddTransactionComponent } from './add-transaction/add-transaction.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipe } from "./transaction/filter.pipe";
+import { TransferComponent } from './transfer/transfer.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +25,7 @@ import { TableComponent } from "./table/table.component";
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    NgxPaginationModule,
   ],
   declarations: [
     NgbdpaginationBasicComponent,
@@ -28,7 +34,12 @@ import { TableComponent } from "./table/table.component";
     NgbdnavBasicComponent,
     ButtonsComponent,
     CardsComponent,
-    TableComponent
+    TableComponent,
+    TransactionComponent,
+    AddTransactionComponent,
+    FilterPipe,
+    TransferComponent,
+    FeedbackComponent
   ]
 })
 export class ComponentsModule { }

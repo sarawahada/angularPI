@@ -1,0 +1,118 @@
+<style>
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  
+    form {
+      width: 50%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    input,
+    select {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  
+    button[type="submit"]:hover {
+      background-color: #0062cc;
+    }
+  
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+  
+    .balance-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .balance {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+  
+  <div class="form-container">
+    <form [formGroup]="transactionForm" (submit)="onSubmit()">
+      <div>
+        <label for="ribEmetteur">Rib Em</label>
+        <input type="text" id="ribEmetteur" formControlName="rib_emetteur">
+      </div>
+      <div>
+        <label for="ribRecipient">Rib Rec</label>
+        <input type="text" id="ribRecipient" formControlName="rib_recipient">
+      </div>
+      <div>
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" formControlName="amount">
+      </div>
+      <div>
+        <button type="button" (click)="onSubmit()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- Add the input element that you want to focus -->
+                <input type="text" id="myInput" placeholder="Enter text here">
+        
+                <!-- Add a button that triggers the handleModalShown function -->
+                <button type="button" class="btn btn-primary" id="approveTransactionBtn">Approve transaction</button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          $(document).ready(function() {
+            // Attach a click event handler to the approveTransactionBtn button
+            $('#approveTransactionBtn').on('click', function() {
+              handleModalShown();
+            });
+          });
+        </script>
+        
+      </div>
+
+      
+    </form>
+  
+  </div>
+  

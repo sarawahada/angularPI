@@ -4,5 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  recaptcha: {
+      siteKey: '6LfKddglAAAAANhCRoc9DnDI50H0k01SXOlqlICU',
+  },
 };

@@ -13,6 +13,7 @@ import { ExamplesComponent } from './examples.component';
 import { ProfileConsultantComponent } from './profileConsultant/profileConsultant.component';
 import { BookConsultationComponent } from './book-consultation/book-consultation.component';
 import { bookConsultationComponent } from './profileConsultant copy/bookConsultation';
+import { EventClientComponent } from './event-client/event-client.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { bookConsultationComponent } from './profileConsultant copy/bookConsulta
         ProfileComponent,
         ProfileConsultantComponent,
         BookConsultationComponent,
-        bookConsultationComponent
+        bookConsultationComponent,
+        EventClientComponent
         
     ]
 })

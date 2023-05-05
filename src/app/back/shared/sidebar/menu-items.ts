@@ -18,6 +18,30 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/transaction',
+    title: 'Transaction',
+    icon: 'bi bi-patch-question-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/addtrans',
+    title: 'Add Transaction',
+    icon: 'bi bi-patch-question-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/transfer',
+    title: 'Transaction',
+    icon: 'bi bi-patch-question-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/alert',
     title: 'Alert',
     icon: 'bi bi-bell',
