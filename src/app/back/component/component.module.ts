@@ -12,6 +12,10 @@ import { NgbdnavBasicComponent } from './nav/nav.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
+import { ClaimsComponent } from './claims/claims.component';
+import { InvestesmentsComponent } from './investesments/investesments.component';
+import { ExportPDFComponent } from './export-pdf/export-pdf.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   imports: [
@@ -28,7 +32,11 @@ import { TableComponent } from "./table/table.component";
     NgbdnavBasicComponent,
     ButtonsComponent,
     CardsComponent,
-    TableComponent
+    TableComponent,
+    ClaimsComponent,
+    InvestesmentsComponent,
+    ExportPDFComponent,
+    ProjectsComponent
   ]
 })
 export class ComponentsModule { }

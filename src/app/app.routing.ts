@@ -14,6 +14,11 @@ import { BookConsultationComponent } from './front/examples/book-consultation/bo
 import { bookConsultationComponent } from './front/examples/profileConsultant copy/bookConsultation';
 import { DashboardComponent } from './back/dashboard/dashboard.component';
 import { FullComponent } from './back/layouts/full/full.component';
+import { ProjectComponent } from './front/components/project/project.component';
+import { InvestesmentComponent } from './front/components/investesment/investesment.component';
+import { ClaimComponent } from './front/components/claim/claim.component';
+import { ClaimsComponent } from './back/component/claims/claims.component';
+import { InvestesmentsComponent } from './back/component/investesments/investesments.component';
 
 const routes: Routes =[
     { path: 'index',                component: ComponentsComponent },
@@ -25,6 +30,14 @@ const routes: Routes =[
     { path: 'examples/profileConsultant',component: ProfileConsultantComponent},
     { path: 'examples/bookConsultation',component: BookConsultationComponent},
     { path: 'examples/book',component: bookConsultationComponent},
+    { path: 'project',component: ProjectComponent},
+    { path: 'investesment',component: InvestesmentComponent},
+    { path: 'addclaim',component: ClaimComponent},
+    { path: 'claims',component: ClaimsComponent},
+    { path: 'investesments',component: InvestesmentsComponent},
+
+    
+    
       {
     path: '',
     component: FullComponent,

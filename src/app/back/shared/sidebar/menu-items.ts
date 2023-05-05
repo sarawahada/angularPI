@@ -18,6 +18,30 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/claims',
+    title: 'claims',
+    icon: 'bi bi-patch-question-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/investesments',
+    title: 'investesments',
+    icon: 'bi bi-patch-question-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/projects',
+    title: 'projects',
+    icon: 'bi bi-patch-question-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/alert',
     title: 'Alert',
     icon: 'bi bi-bell',

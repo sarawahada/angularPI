@@ -8,8 +8,8 @@ import * as Rellax from 'rellax';
 })
 export class LandingComponent implements OnInit {
   data : Date = new Date();
-  focus;
-  focus1;
+  focus:any;
+  focus1:any;
 
   constructor() { }
 

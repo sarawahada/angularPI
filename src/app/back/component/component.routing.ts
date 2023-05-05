@@ -9,6 +9,9 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { ConsultationComponent } from './consultation/consultation.component';
+import { ClaimsComponent } from './claims/claims.component';
+import { InvestesmentsComponent } from './investesments/investesments.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -50,6 +53,18 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'consultation',
 				component: ConsultationComponent
+			},
+			{
+				path: 'claims',
+				component: ClaimsComponent
+			},
+			{
+				path: 'investesments',
+				component: InvestesmentsComponent
+			},
+			{
+				path: 'projects',
+				component: ProjectsComponent
 			},
 		]
 	}
